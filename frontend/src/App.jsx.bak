@@ -1,4 +1,4 @@
-
+cat > src/App.jsx << 'EOF'
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Landing from "./pages/Landing";
@@ -13,4 +13,4 @@ export default function App() {
     </BrowserRouter>
   );
 }
-
+EOF

@@ -1,0 +1,9 @@
+:root{
+  --clr-1: #154d71;
+  --clr-2: #1c6ea4;
+  --clr-3: #33a1e0;
+  --clr-4: #fff9af;
+}
+
+html,body,#root { height: 100%; margin:0; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background: #f8fafc;}
+a { color: inherit; }
