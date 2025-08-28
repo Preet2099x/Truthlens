@@ -18,7 +18,17 @@ async function validateApiKeys() {
         console.error(chalk.red('❌ GEMINI_API_KEY: Not found in .env'));
         allKeysValid = false;
     }
-    // CHANGED: Uses chalk.blue() instead of just blue()
+
+    if (!process.env.MONGODB_URI) {
+    console.error(chalk.red('❌ MONGODB_URI: Not found in .env'));
+    allKeysValid = false;
+    }
+
+    if (!process.env.JWT_SECRET) {
+    console.error(chalk.red('❌ JWT_SECRET: Not found in .env'));
+    allKeysValid = false;
+    }
+
     console.log(chalk.blue('-------------------------'));
     return allKeysValid;
 }
