@@ -19,7 +19,7 @@ app.get('/health', (req, res) => {
 
 // --- API Routes ---
 app.use('/api/verify', factCheckRoutes);
-app.use('/api/auth', authRoutes); // <-- add
+app.use('/api/auth', authRoutes); 
 
 // --- 404 Handler ---
 app.use((req, res) => {
