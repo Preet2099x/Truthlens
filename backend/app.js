@@ -4,6 +4,7 @@ import cors from 'cors';
 import factCheckRoutes from './routes/factCheckRoutes.js';
 import authRoutes from './routes/authRoutes.js'; // <-- add
 import ocrRoutes from './routes/ocrRoutes.js';
+import crawlerRoutes from './routes/crawlerRoutes.js';
 import helmet from 'helmet'; // optional if installed
 
 const app = express();
@@ -21,7 +22,8 @@ app.get('/health', (req, res) => {
 // --- API Routes ---
 app.use('/api/verify', factCheckRoutes);
 app.use('/api/auth', authRoutes); 
-app.use('/api/ocr', ocrRoutes); 
+app.use('/api/ocr', ocrRoutes);
+app.use('/api/crawler', crawlerRoutes); 
 
 // --- 404 Handler ---
 app.use((req, res) => {

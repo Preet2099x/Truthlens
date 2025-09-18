@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import OCRTest from './components/OCRTest.jsx'
+import URLCrawler from './components/URLCrawler.jsx'
 import './App.css'
 
 function App() {
@@ -11,6 +12,8 @@ function App() {
     switch (currentPage) {
       case 'ocr':
         return <OCRTest />;
+      case 'crawler':
+        return <URLCrawler />;
       default:
         return (
           <div className="min-h-screen bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center">
@@ -23,6 +26,12 @@ function App() {
                   className="bg-white text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
                 >
                   Test OCR Fact Checker
+                </button>
+                <button
+                  onClick={() => setCurrentPage('crawler')}
+                  className="bg-white text-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+                >
+                  Test URL Crawler
                 </button>
               </div>
             </div>
@@ -65,6 +74,16 @@ function App() {
                 }`}
               >
                 OCR Test
+              </button>
+              <button
+                onClick={() => setCurrentPage('crawler')}
+                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                  currentPage === 'crawler'
+                    ? 'bg-green-100 text-green-700'
+                    : 'text-gray-600 hover:text-gray-900'
+                }`}
+              >
+                URL Crawler
               </button>
             </div>
           </div>
